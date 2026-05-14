@@ -78,7 +78,7 @@ void gen_code(const char* lang){
         return;
      }
      fclose(pointer);
-     printf("file sikeresen létrehozva %s névvel.\n", pointer);
+     printf("file sikeresen létrehozva %s névvel.\n", lang);
 }
 //main fuggveny vegre mar rohad auz ujjam
 
