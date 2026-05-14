@@ -16,10 +16,10 @@ const char* version = "1.0.0";
 const char* c_temp = 
 "#include <stdio.h>\n"
 "\n"
-"const *char* version = \"%s\";\n"
+"const char* version = \"%s\";\n"
 "\n"
 "int main(){\n"
-"    printf(\"verzio: %s\\n\", version);\n"
+"    printf(\"verzio: %%s\\n\", version);\n"
 "    printf(\"Hello World!\");\n"
 "    return 0;\n"
 "}";
@@ -41,12 +41,13 @@ const char* python_temp =
 "    print(\"Hello World!\")\n"
 "    return 0\n"
 "if __name__ == \"__main__\":\n"
-"main()";
+"  main()";
 
 const char* bash_temp =
-"#!/bin /bash\n"
+
+"#!/bin/bash\n"
 "\n"
-"VERSION = \"%s\\n"
+"VERSION=\"%s\"\n"
 "\n"
 "echo \"verzio: $VERSION\"\n"
 "echo \"Hello World!\"";
@@ -83,8 +84,8 @@ void gen_code(const char* lang){
 //main fuggveny vegre mar rohad auz ujjam
 
 int main(){
-    char lang[15];
-    printf("adj meg egy nyelvet (c/java/pyton/bash):\n");
+    char lang[30];
+    printf("adj meg egy nyelvet (c/java/python/bash):\n");
     scanf("%s", lang);
     gen_code(lang);
 
